@@ -10,6 +10,14 @@ const app = express()
 
 app.use(express.json())
 
+app.get('/', (req, res) => {
+    res.json({
+        mensagem: 'API rodando 🚀',
+        rotas: ['/cliente', '/pedido', '/pedido_produto', '/produto', '/endereco', '/limiteCredito']
+    })
+})
+
+
 app.get('/cliente', async (req, res) => {
     try {
         const clientes = await buscarClientes()
