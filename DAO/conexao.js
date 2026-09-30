@@ -1,16 +1,12 @@
-import mysql from 'mysql'
+import mysql from 'mysql2/promise'
 
-const db = mysql.createConnection({
-    host: '192.168.1.1',
-    user: 'root',
-    password: '1234',
-    database: 'bd_vibetrack'
-})
+async function conexao() {
+    return mysql.createConnection({
+        host: '127.0.0.1',
+        user: 'root',
+        password: '1234',
+        database: 'firma_db'
+    })
+}
 
-db.connect((err) => {
-    if (err) {
-        console.error('Erro ao conectar ao MySQL:', err.message)
-    } else {
-        console.log('Conectado ao MySQL')
-    }
-})
+export { conexao }

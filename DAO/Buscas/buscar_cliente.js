@@ -1,4 +1,4 @@
-import {conexao} from '../conexao.js'
+import { conexao } from '../conexao.js'
 
 async function buscarClientes(){
     console.log('DAO de CLIENTE')

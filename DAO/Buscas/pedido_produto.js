@@ -6,7 +6,7 @@ async function buscarPedido_produto() {
 
         const conn6 = await conexao()
             try{                
-                const [rows, fields] = await conn5.query(sql6);
+                const [rows, fields] = await conn6.query(sql6);
                 await conn6.end()
                 return rows
             } catch(err) {
